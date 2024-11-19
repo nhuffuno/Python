@@ -31,7 +31,7 @@ class TestTelevision:
         assert self.tv.__str__() == "Power = True, Channel = 1, Volume = 0"
         self.tv.channel_up()
         self.tv.channel_up()
-        self.tv.channel_up()  # Loop back to MIN_CHANNEL
+        self.tv.channel_up()  
         assert self.tv.__str__() == "Power = True, Channel = 0, Volume = 0"
 
     def test_channel_down(self):
@@ -42,7 +42,7 @@ class TestTelevision:
         self.tv.channel_down()
         assert self.tv.__str__() == "Power = True, Channel = 1, Volume = 0"
         self.tv.channel_down()
-        self.tv.channel_down()  # Loop back to MAX_CHANNEL
+        self.tv.channel_down()  
         assert self.tv.__str__() == "Power = True, Channel = 3, Volume = 0"
 
     def test_volume_up(self):
@@ -50,7 +50,7 @@ class TestTelevision:
         self.tv.volume_up()
         assert self.tv.__str__() == "Power = True, Channel = 0, Volume = 1"
         self.tv.volume_up()
-        self.tv.volume_up()  # Should remain at MAX_VOLUME
+        self.tv.volume_up() 
         assert self.tv.__str__() == "Power = True, Channel = 0, Volume = 2"
 
     def test_volume_down(self):
@@ -60,7 +60,7 @@ class TestTelevision:
         self.tv.volume_down()
         assert self.tv.__str__() == "Power = True, Channel = 0, Volume = 1"
         self.tv.volume_down()
-        self.tv.volume_down()  # Should remain at MIN_VOLUME
+        self.tv.volume_down() 
         assert self.tv.__str__() == "Power = True, Channel = 0, Volume = 0"
 
     def test_volume_mutes_on_adjust(self):
